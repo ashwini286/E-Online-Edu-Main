@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 function SignUp() {
-  const [username, setUsername] = useState('');
+  const [employeename, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -13,18 +13,18 @@ function SignUp() {
 
     try {
       const response = await axios.post('http://localhost:3000/SignUp', {
-        username,
-        email,
-        password,
+        employeename: employeename,
+        email: email,
+        password: password
       });
 
-      // Handle success response
-      console.log('Response:', response.data);
+      alert("Employee Registration Successfully");
+
       // Redirect to login page upon successful signup
       navigate('/Login');
     } catch (error) {
       // Handle error
-      console.error('Error:', error);
+      alert(error)
     }
   };
   return (
