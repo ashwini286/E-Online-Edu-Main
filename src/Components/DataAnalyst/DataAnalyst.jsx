@@ -6,6 +6,7 @@ function DataAnalyst() {
   return (
     <>
       <div>
+        
         <h2 className="text-2xl font-semibold mb-2 ">Data Analyst</h2>
         <p>Collect, organize, and transform data to make informed decisions</p>
         <div className="pt-5">

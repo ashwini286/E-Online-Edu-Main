@@ -19,7 +19,10 @@ function Home() {
   return (
     <>
       <Main />
-      <div className="w-full mt-20 max-w-6xl mx-auto">
+      <div class="w-full mt-28 max-w-6xl mx-auto">
+  <span class="text-4xl font-bold text-[#023047]  border-b border-[#023047]">Start a new career with CodeWithGenius &#8594;</span>
+</div>
+      <div className="w-full mt-10 max-w-6xl mx-auto">
         {/* Tab Buttons */}
         <div className="p-2 rounded-t-lg overflow-x-auto">
           <div className="flex space-x-4">
