@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Main from './Main';
 import DataAnalyst from './DataAnalyst/DataAnalyst';
+import StartLearning from './startLearning/StartLearning';
 
 function Home() {
   const [activeTab, setActiveTab] = useState('tab1');
@@ -91,6 +92,7 @@ function Home() {
             <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem...</p>
           </div>
         </div>
+        <StartLearning />
       </div>
     </>
   );

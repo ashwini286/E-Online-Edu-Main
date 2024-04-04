@@ -1,38 +1,27 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 function Login() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:3465/api/v1/employee/login', {
+      const response = await axios.post('http://localhost:3000/Login', {
 
-        email: email,
-        password: password,
-      }).then((res) => {
-        console.log(res.data)
-
-        if (res.data.message === "Email not exits") {
-          alert("Email not exits");
-        } else if (res.data.message === "Login Success") {
-
-          navigate('/');
-        }
-        else {
-          alert("Incorrect Email or Password");
-        }
+        email,
+        password,
       });
-    } catch (err) {
+
+      // Handle success response
+      console.log('Response:', response.data);
+    } catch (error) {
       // Handle error
-      alert(err)
+      console.error('Error:', error);
     }
   };
   return (
@@ -48,6 +37,10 @@ function Login() {
               <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
                 Sign in to your account
               </h1>
+
+
+
+
 
               <form id="connect-google-button" method="post" action="">
                 <button class="w-full inline-flex items-center justify-center py-2.5 px-5 mr-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-gray-900 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700" type="submit">
@@ -71,16 +64,11 @@ function Login() {
                   <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
                   <input type="email"
                     name="login"
-                    id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-teal-600 focus:border-teal-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" onChange={(event) => {
-                      setEmail(event.target.value);
-                    }} placeholder="name@company.com" required="" />
+                    id="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-teal-600 focus:border-teal-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@company.com" required="" />
                 </div>
                 <div>
                   <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
-                  <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-teal-600 focus:border-teal-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" value={password}
-                    onChange={(event) => {
-                      setPassword(event.target.value);
-                    }} required="" />
+                  <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-teal-600 focus:border-teal-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" />
                 </div>
                 <div class="flex items-center justify-between">
                   <div class="flex items-start">
@@ -113,7 +101,7 @@ function Login() {
 
       </section>
     </div>
-  )
+  );
 }
 
-export default Login
+export default Login;
