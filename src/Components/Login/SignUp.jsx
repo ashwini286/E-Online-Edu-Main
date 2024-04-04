@@ -1,32 +1,31 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 
 function SignUp() {
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+  const [employeename, setUserName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
-    const navigate = useNavigate(); 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-    
-        try {
-            const response = await axios.post('http://localhost:3000/SignUp', {
-                username,
-                email,
-                password,
-            });
-    
-            // Handle success response
-            console.log('Response:', response.data);
-            // Redirect to login page upon successful signup
-            navigate('/Login');
-        } catch (error) {
-            // Handle error
-            console.error('Error:', error);
-        }
-    };
+  const navigate = useNavigate();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    try {
+      await axios.post('http://localhost:3465/api/v1/employee/save', {
+        employeename: employeename,
+        email: email,
+        password: password
+      });
+      alert("Employee Registration Successfully");
+
+      // Redirect to login page upon successful signup
+      navigate('/Login');
+    } catch (error) {
+      // Handle error
+      alert(error)
+    }
+  };
   return (
     <div className="flex font-poppins items-center justify-center dark:bg-gray-900 min-w-screen min-h-screen">
       <div className="grid gap-8">
@@ -35,15 +34,15 @@ function SignUp() {
             <h1 className="pt-8 pb-6 font-bold text-5xl dark:text-gray-400 text-center cursor-default">
               Sign Up
             </h1>
-            <form 
-            onSubmit={handleSubmit}
-            action="#" method="post" className="space-y-4">
-            <div>
+            <form
+              onSubmit={handleSubmit}
+              action="#" method="post" className="space-y-4">
+              <div>
                 <label htmlFor="name" className="mb-2 dark:text-gray-400 text-lg">User Name</label>
                 <input
                   id="name"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  value={employeename}
+                  onChange={(e) => setUserName(e.target.value)}
                   className="border dark:bg-indigo-700 dark:text-gray-300 dark:border-gray-700 p-3 shadow-md placeholder:text-base border-gray-300 rounded-lg w-full focus:scale-105 ease-in-out duration-300"
                   type="name"
                   placeholder="Name"

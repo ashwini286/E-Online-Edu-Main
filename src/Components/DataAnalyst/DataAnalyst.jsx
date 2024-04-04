@@ -6,7 +6,7 @@ function DataAnalyst() {
   return (
     <>
       <div>
-        
+
         <h2 className="text-2xl font-semibold mb-2 ">Data Analyst</h2>
         <p>Collect, organize, and transform data to make informed decisions</p>
         <div className="pt-5">
@@ -19,7 +19,7 @@ function DataAnalyst() {
           </div>
           <div className="pt-5 pb-10">
             <a className="bg-blue-600 rounded-sm text-start text-white   px-[70%] py-2">
-              <span className="-ml-[69%]">All occupations</span>
+              <span className="-ml-[68%]">All occupations</span>
             </a>
             <span className="p-2">$90,500**</span>
           </div>
@@ -157,7 +157,7 @@ function DataAnalyst() {
             </a>
           </p>
         </div>
-      </div>
+      </div >
     </>
   );
 }
