@@ -67,7 +67,7 @@ function Home() {
         </div>
 
         {/* Tab Content */}
-        <div className='border-2 rounded-lg border-blue-100'>
+        <div className='border-2 rounded-lg border-blue-100 shadow-xl'>
           <div id="tab1" className={`p-4 tab-content bg-white shadow-md rounded-lg ${activeTab === 'tab1' ? '' : 'hidden'}`}>
             <DataAnalyst />
           </div>
