@@ -13,7 +13,7 @@ function Login() {
     e.preventDefault();
 
     try {
-      await axios.post('http://localhost:3465/api/v1/employee/login', {
+      await axios.post('', {
 
         email: email,
         password: password,
