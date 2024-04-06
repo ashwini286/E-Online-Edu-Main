@@ -4,6 +4,7 @@ import Main from './Main';
 import DataAnalyst from './DataAnalyst/DataAnalyst';
 import StartLearning from './startLearning/StartLearning';
 import  Aurora  from '../Components/aurora/Aurora';
+import ExploreCources from './ExploreOurCources/ExploreCources';
 
 function Home() {
   const [activeTab, setActiveTab] = useState('tab1');
@@ -95,6 +96,7 @@ function Home() {
           </div>
         </div>
         <StartLearning />
+        <ExploreCources />
         <Aurora />
       </div>
     </>

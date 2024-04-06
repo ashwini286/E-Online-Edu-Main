@@ -67,7 +67,7 @@ const courses = [
     tagText: "MS Excel",
     title: "MS Excel",
     skills:
-      "Skills you will gain: Spreadsheet, Data Analysis, SQL, Data Visualization, Data cleaning...etc",
+      "Skills you will gain: Spreadsheet, Advanced Data Analysis, SQL, Data Visualization, Data cleaning...etc",
     rating: "4.0",
     reviews: "34 reviews",
     button: "Start To Learn"
@@ -78,7 +78,7 @@ const CourseCard = ({ course }) => (
   <div className="bg-white rounded-lg overflow-hidden shadow-2xl">
     {/* Image */}
     <img
-      className="h-48 w-full object-cover object-end"
+      className="h-42 w-full object-cover object-end rounded-lg"
       src={course.imageSrc}
       alt="Course"
     />
@@ -122,13 +122,13 @@ const StartLearning = () => {
           Explore online courses from the world's top companies.
         </h1>
         <div className=" flex items-start justify-start">
-          <div className="grid md:grid-cols-3 grid-cols-1 gap-4 px-4">
+          <div className="grid md:grid-cols-3 grid-cols-1 gap-4">
             {displayedCourses.map((course, index) => (
-              <CourseCard key={index} course={course} className="border-2 rounded-lg border-blue-100 shadow-xl "/>
+              <CourseCard key={index} course={course} className="border rounded-lg border-blue-800 shadow-xl "/>
             ))}
           </div>
         </div>
-        <div class=" text-base font-semibold flex justify-center items-center mt-12">
+        <div class=" text-base font-semibold flex justify-center items-center mt-12 pb-8">
           <button
             className="border border-blue-800 text-blue-800 p-2 rounded-lg"
             onClick={() => setShowAllCourses(!showAllCourses)}
