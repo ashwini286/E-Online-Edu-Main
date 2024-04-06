@@ -3,10 +3,10 @@ import { Disclosure, Menu } from '@headlessui/react'
 import { FaBars } from "react-icons/fa";
 import { IoCloseSharp } from "react-icons/io5";
 import { Link } from 'react-router-dom';
-
+const login = false;
 const navigation = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'My Learning', href: '#', current: false },
+  { name: 'Dashboard', href: '/', current: true },
+  { name: 'My Learning', href: `${login ? "/" : "/login" } `, current: false },
   { name: 'Course', href: '#', current: false },
 ]
 
@@ -59,20 +59,34 @@ export default function Navbar() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <Menu as="div" className="relative ml-3">
-                  <Link to="/login">
-                    <div className='text-white'>
-                      Log In
-                    </div>
-                  </Link>
-                </Menu>
-                <Menu as="div" className="relative ml-3 pl-8">
+                {
+                  login ? (
+                    <>
+                    <div className="p-3 w-12 rounded-full bg-blue-400 text-white font-bold text-center">A</div>
+                    </>
+                  ) : (
+                    <Menu as="div" className="relative ml-3">
+                    <Link to="/login">
+                      <div className='text-white'>
+                        Log In
+                      </div>
+                    </Link>
+                  </Menu>
+                  )
+                }
+               {
+                login ? ("") : (
+
+                  <Menu as="div" className="relative ml-3 pl-8">
                   <Link to = "/SignUp">
                     <button className='py-3 px-6 bg-blue-800 text-white rounded'>
                       Join Us
                     </button>
                   </Link>
                 </Menu>
+                ) 
+               }
+              
               </div>
             </div>
           </div>

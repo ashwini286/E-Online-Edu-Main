@@ -5,7 +5,7 @@ function Main() {
   return (
     <>
     <div>
-<Navbar />
+{/* <Navbar /> */}
 <section  class="sm:mt-6 lg:mt-8 mt-12  mx-auto px-4 sm:px-6 lg:px-8">
 
 <div

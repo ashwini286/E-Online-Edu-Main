@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-
+import Navbar from './Navbar';
 import Main from './Main';
 import DataAnalyst from './DataAnalyst/DataAnalyst';
 import StartLearning from './startLearning/StartLearning';
+import  Aurora  from '../Components/aurora/Aurora';
 
 function Home() {
   const [activeTab, setActiveTab] = useState('tab1');
@@ -19,11 +20,12 @@ function Home() {
 
   return (
     <>
+    <Navbar />
       <Main />
-      <div class="w-full mt-28 max-w-6xl mx-auto">
+      <div class="w-full mt-28 px-16">
   <span class="text-4xl font-bold text-[#023047]  border-b border-[#023047]">Start a new career with CodeWithGenius &#8594;</span>
 </div>
-      <div className="w-full mt-10 max-w-6xl mx-auto">
+      <div className="w-full mt-10 px-16">
         {/* Tab Buttons */}
         <div className="p-2 rounded-t-lg overflow-x-auto">
           <div className="flex space-x-4">
@@ -93,6 +95,7 @@ function Home() {
           </div>
         </div>
         <StartLearning />
+        <Aurora />
       </div>
     </>
   );

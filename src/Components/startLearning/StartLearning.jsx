@@ -112,19 +112,19 @@ const StartLearning = () => {
   const displayedCourses = showAllCourses ? courses : courses.slice(0, 3);
   return (
     <>
-      <div class="w-full mt-28 max-w-6xl mx-auto">
+      <div class="w-full mt-28  ">
         <span class="text-4xl font-bold text-[#023047]  border-b border-[#023047]">
           Start learning with courses &#8594;
         </span>
       </div>
-      <div className="border-2 rounded-lg border-blue-100 mt-8 shadow-xl">
+      <div className=" mt-8">
         <h1 className="pt-10 text-xl  font-semibold pb-4 pl-4">
           Explore online courses from the world's top companies.
         </h1>
         <div className=" flex items-start justify-start">
           <div className="grid md:grid-cols-3 grid-cols-1 gap-4 px-4">
             {displayedCourses.map((course, index) => (
-              <CourseCard key={index} course={course} />
+              <CourseCard key={index} course={course} className="border-2 rounded-lg border-blue-100 shadow-xl "/>
             ))}
           </div>
         </div>
